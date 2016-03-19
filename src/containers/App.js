@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Leftbar from '../components/Leftbar';
 import styles from './App.css';
-import bgUrl from 'file?name=[name]-[hash].[ext]!../images/bg.jpg';
+import Header from '../components/Header';
 
 export default class App extends Component {
   constructor(props) {
@@ -11,9 +10,7 @@ export default class App extends Component {
   render() {
     return (
       <div className={styles.body}>
-        <div className={styles.backgroundImage} style={{backgroundImage: `url(${bgUrl})`}} />
-        <div className={styles.backgroundOverlay} />
-        <Leftbar />
+        <Header />
         <div className={styles.main}>
           {this.props.children}
         </div>
