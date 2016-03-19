@@ -3,6 +3,12 @@ import styles from './ListItem.css';
 import Status from './Status.js';
 
 export default class ListItem extends Component {
+  constructor(props) {
+    super(props);
+    const { handleClick, id } = props;
+    this.handleClick = handleClick.bind(event, id);
+  }
+
   render() {
     const {
       id,
@@ -14,7 +20,7 @@ export default class ListItem extends Component {
       status
     } = this.props;
     return (
-      <div>
+      <div onClick={this.handleClick}>
         {id}
         {subject}
         {priority}
@@ -34,5 +40,6 @@ ListItem.propTypes = {
   release: React.PropTypes.string,
   assign: React.PropTypes.string,
   news: React.PropTypes.string,
-  status: React.PropTypes.number
+  status: React.PropTypes.number,
+  handleClick: React.PropTypes.func
 };
