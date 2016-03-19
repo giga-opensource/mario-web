@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Filter from '../components/issue/Filter';
+import Filter from '../components/issue/Filter.js';
+import List from '../components/issue/List.js';
 
 export default class Issues extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ export default class Issues extends Component {
     return (
       <div>
         {this.renderFilters()}
+        <List />
       </div>
     );
   }
