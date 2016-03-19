@@ -1,0 +1,23 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "valid-jsdoc": 2,
+
+    // Disable until Flow supports let and const
+    "no-var": 0,
+    "vars-on-top": 0,
+
+    // Disable Airbnb-specific rules unless need to support it
+    "comma-dangle": 0,
+    "id-length": 0,
+
+    // Disable in prefer to single quote for consistence
+    "jsx-quotes": 0,
+
+    // Disable cause of the name convention of Redux actions and action creators
+    "no-shadow": 0,
+
+    // Disable cause of the api field names
+    "camelcase": [0, {"properties": "never"}]
+  }
+}
