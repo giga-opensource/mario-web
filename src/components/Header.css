@@ -19,8 +19,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 40px;
-  padding: 12px;
+  height: 16px;
+  padding: 12px 10px;
 }
 
 .projectNameWrapper {
@@ -40,6 +40,6 @@
   position: absolute;
   top: 0;
   right: 0;
-  height: 40px;
-  padding: 12px;
+  height: 16px;
+  padding: 12px 10px;
 }

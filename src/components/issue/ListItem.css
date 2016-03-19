@@ -1,0 +1,31 @@
+
+.tableRow {
+  composes: tableRow from "./List.css";
+}
+
+.tableRowAdditionalInfo {
+  composes: tableRow; /* uses .tableRow */
+  margin-top: -1px;
+}
+
+.tableRowItem {
+  composes: tableRowItem from "./List.css";
+}
+
+.tableRowItemGrow3 {
+  composes: tableRowItem;
+  flex-grow: 3;
+}
+
+/* ListItem ID */
+.tableRowItemColID {
+  composes: tableRowItemColID from "./List.css";
+}
+
+.tableRowItemColPriority {
+  composes: tableRowItemColPriority from "./List.css";
+}
+
+.tableRowItemColRelease {
+  composes: tableRowItemColRelease from "./List.css";
+}

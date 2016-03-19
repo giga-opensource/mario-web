@@ -9,9 +9,12 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className={styles.body}>
+      <div data-ui-component='App' className={styles.app}>
+        {/* Header */}
         <Header />
-        <div className={styles.main}>
+
+        {/* Body */}
+        <div data-ui-component='Body' className={styles.body}>
           {this.props.children}
         </div>
       </div>

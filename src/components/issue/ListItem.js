@@ -14,14 +14,21 @@ export default class ListItem extends Component {
       status
     } = this.props;
     return (
-      <div>
-        {id}
-        {subject}
-        {priority}
-        {release}
-        {assign}
-        {news}
-        <Status status={status} />
+      <div data-ui-component='ListItem'>
+        <div className={styles.tableRow}>
+          <div className={styles.tableRowItemColID}>{id}</div>
+          <div className={styles.tableRowItem}>{subject}</div>
+          <div className={styles.tableRowItemColPriority}>{priority}</div>
+          <div className={styles.tableRowItemColRelease}>{release}</div>
+          <div className={styles.tableRowItem}>{assign}</div>
+        </div>
+        <div className={styles.tableRowAdditionalInfo}>
+          <div className={styles.tableRowItemColID}></div>
+          <div className={styles.tableRowItemGrow3}>{news}</div>
+          <div className={styles.tableRowItem}>
+            <Status status={status} />
+          </div>
+        </div>
       </div>
     );
   }

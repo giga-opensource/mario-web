@@ -15,7 +15,7 @@ export default class Issues extends Component {
 
   render() {
     return (
-      <div>
+      <div data-ui-component='Issues'>
         {this.renderFilters()}
         <List />
         <AddButton />

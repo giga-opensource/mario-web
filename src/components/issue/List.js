@@ -10,7 +10,17 @@ export default class List extends Component {
 
   render() {
     return (
-      <div>
+      <div data-ui-component='List' className={styles.table}>
+        {/* Table Header */}
+        <div className={styles.tableRow + ' ' + styles.tableHeader}>
+          <div className={styles.tableRowItemColID}>#</div>
+          <div className={styles.tableRowItem}>Subject</div>
+          <div className={styles.tableRowItemColPriority}>Priority</div>
+          <div className={styles.tableRowItemColRelease}>Release</div>
+          <div className={styles.tableRowItem}>Assign</div>
+        </div>
+
+        {/* Table Body */}
         {this.renderItems()}
       </div>
     );

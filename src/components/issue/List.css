@@ -1,0 +1,43 @@
+.table {
+  display: flex;
+  flex-flow: column nowrap; /* flex-direction || flex-wrap */
+  justify-content: space-between;
+}
+
+.tableHeader {
+  background: none !important;
+}
+
+.tableRow {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  background-color: white;
+  padding: 3px;
+  margin-bottom: 1px;
+}
+
+.tableRowAdditionalInfo {
+  composes: tableRow; /* uses .tableRow */
+  margin-top: -1px;
+}
+
+.tableRowItem {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+/* Specific width for the ID col */
+.tableRowItemColID {
+  width: 70px;
+}
+
+.tableRowItemColPriority {
+  width: 100px;
+}
+
+.tableRowItemColRelease {
+  width: 100px;
+}
