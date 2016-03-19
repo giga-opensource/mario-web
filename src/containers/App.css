@@ -1,3 +1,9 @@
+/* GLOBAL CSS SPREADSHEET */
+/* 
+ * We are currently using css modules.
+ * Please refer to https://github.com/css-modules/css-modules for more information
+ */
+
 :global(html) {
   height: 100%;
 }
@@ -19,10 +25,5 @@
 }
 
 .main {
-  position: absolute;
-  left: 90px;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: #fff;
+
 }
