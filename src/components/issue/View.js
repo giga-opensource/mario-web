@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import styles from './Filter.css';
+import styles from './View.css';
 
-export default class Filter extends Component {
+export default class View extends Component {
   render() {
     const { name } = this.props;
     return (
@@ -10,6 +10,6 @@ export default class Filter extends Component {
   }
 }
 
-Filter.propTypes = {
+View.propTypes = {
   name: React.PropTypes.string
 };

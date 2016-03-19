@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Filter from '../components/issue/Filter.js';
+import View from '../components/issue/View.js';
 import List from '../components/issue/List.js';
+import AddButton from '../components/issue/AddButton.js';
 
 export default class Issues extends Component {
   constructor(props) {
@@ -8,8 +9,8 @@ export default class Issues extends Component {
   }
 
   renderFilters() {
-    const { filters } = this.props;
-    return filters.map((filter, index) => <Filter key={index} {...filter}/>);
+    const { views } = this.props;
+    return views.map((view, index) => <View key={index} {...view}/>);
   }
 
   render() {
@@ -17,15 +18,16 @@ export default class Issues extends Component {
       <div>
         {this.renderFilters()}
         <List />
+        <AddButton />
       </div>
     );
   }
 }
 
 Issues.propTypes = {
-  filters: React.PropTypes.array
+  views: React.PropTypes.array
 };
 
 Issues.defaultProps = {
-  filters: [{name: 'View 1'}, {name: 'View 2'}]
+  views: [{name: 'View 1'}, {name: 'View 2'}]
 };
