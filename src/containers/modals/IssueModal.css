@@ -1,0 +1,72 @@
+.container {
+  position: relative;
+  padding: 5px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 30px;
+  width: 30px;
+  background-color: #999;
+  padding: 6px 8px;
+  line-height:20px;
+  font-size: 24px;
+  color: #555;
+}
+
+.closeButton:hover {
+  cursor: pointer;
+}
+
+.section {
+  margin: 10px 0;
+}
+
+.sectionHeader {
+
+}
+
+.propertiesWrapper {
+  composes: section;
+
+  display: flex;
+  flex-flow: row nowrap; /* flex-direction || flex-wrap */
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.properties {
+  display: flex;
+  /*flex-flow: col nowrap;*/
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.propertiesGrow2 {
+  composes: properties;
+  flex-grow: 2;
+}
+
+.propertiesHeader {
+
+}
+
+.propertiesContent {
+
+}
+
+.descriptionWrapper {
+
+}
+
+.uploadsWrapper {
+
+}
+
+.checklistsWrapper {
+
+}
+

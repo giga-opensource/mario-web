@@ -16,9 +16,12 @@ var config = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
+  resolve: { // resolve is needed for react-toolbox
+    extensions: ['', '.jsx', '.scss', '.js', '.json']
+  },
   module: {
     loaders: [
-      { test: /\.css$/, loader: "style-loader!css-loader?modules" },
+      { test: /(\.css|\.scss)$/, loader: "style-loader!css-loader?sourceMap&modules!sass-loader?sourceMap" },
       { test: /\.js$/, loaders: ['babel'], include: path.join(__dirname, 'src') },
     ]
   }

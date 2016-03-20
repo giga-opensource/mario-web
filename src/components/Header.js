@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Header.css';
+import Button from 'react-toolbox/lib/button';
+import Avatar from 'react-toolbox/lib/avatar';
 
 export default class Header extends Component {
   render() {
@@ -7,7 +9,7 @@ export default class Header extends Component {
       <div data-ui-component='Header__container' className={styles.container}>
         {/* Logo */}
         <div data-ui-component='Header__logo' className={styles.logo}>
-          Mario's Butterfly
+          Mario Butterfly
         </div>
 
         {/* Project Name and Selector */}
@@ -19,7 +21,8 @@ export default class Header extends Component {
 
         {/* User Info */}
         <div data-ui-component='Header__userInfo' className={styles.userInfo}>
-          Stanton Wong
+          <Avatar />
+          <span>Stanton Wong</span>
         </div>
 
       </div>
