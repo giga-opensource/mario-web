@@ -1,28 +1,22 @@
 import React, { Component } from 'react';
 import styles from './List.css';
 import Item from './ListItem.js';
-import IssueModal from './IssueModal.js';
+import IssueModal from '../../containers/modals/IssueModal.js';
 
 export default class List extends Component {
   constructor(props) {
     super(props);
-    this.closeModal = this.closeModal.bind(this);
-    this.getOpenIssue = this.getOpenIssue.bind(this);
     this.handleOpenIssue = this.handleOpenIssue.bind(this);
-    this.state = { openIssueId: null };
   }
 
-  getOpenIssue(openIssueId) {
-    const { issues } = this.props;
-    return issues.find(item => item.id === openIssueId);
-  }
-
-  handleOpenIssue(openIssueId) {
-    this.setState({openIssueId: openIssueId});
-  }
-
-  closeModal() {
-    this.setState({openIssueId: null});
+  handleOpenIssue(issueId) {
+    const { modalOpen } = this.props;
+    const modalContent = () => {
+      return (
+        <IssueModal issueId={issueId} />
+      );
+    };
+    modalOpen(modalContent);
   }
 
   renderItems() {
@@ -31,7 +25,6 @@ export default class List extends Component {
   }
 
   render() {
-    const { openIssueId } = this.state;
     return (
       <div data-ui-component='List' className={styles.table}>
         {/* Table Header */}
@@ -45,31 +38,12 @@ export default class List extends Component {
 
         {/* Table Body */}
         {this.renderItems()}
-        {
-          openIssueId &&
-          <IssueModal
-            openIssueId={openIssueId}
-            getOpenIssue={this.getOpenIssue}
-            closeModal={this.closeModal}
-          />
-        }
       </div>
     );
   }
 }
 
 List.propTypes = {
-  issues: React.PropTypes.array
-};
-
-List.defaultProps = {
-  issues: [{
-    id: 1023,
-    subject: 'Story Title, flow to the next line',
-    priority: 'High',
-    release: '0.7.3',
-    assign: 'Xiaoguang Chen',
-    news: 'Lyra upload an image.',
-    status: 1
-  }]
+  issues: React.PropTypes.array,
+  modalOpen: React.PropTypes.func,
 };

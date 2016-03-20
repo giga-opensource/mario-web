@@ -1,34 +1,58 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import View from '../components/issue/View.js';
 import List from '../components/issue/List.js';
 import AddButton from '../components/issue/AddButton.js';
 import CreateView from '../components/issue/CreateView.js';
+import {
+  viewsFetch,
+  issuesFetch,
+  modalOpen,
+  modalClose
+} from '../actions/index';
 
-export default class Issues extends Component {
+function renderViews(views) {
+  return views.map((view, index) => <View key={index} {...view}/>);
+}
+
+class Issues extends Component {
   constructor(props) {
     super(props);
   }
 
-  renderFilters() {
-    const { views } = this.props;
-    return views.map((view, index) => <View key={index} {...view}/>);
+  componentWillMount() {
+    const {
+      viewsFetch,
+      issuesFetch
+    } = this.props;
+    viewsFetch();
+    issuesFetch();
   }
 
   render() {
+    const {
+      issues,
+      views,
+      modalOpen,
+      modalClose
+    } = this.props;
     return (
       <div data-ui-component='Issues'>
         
         {/* Filter View Tabs */}
         <div data-ui-component='View__tabs'>
-          {this.renderFilters()}
+          {renderViews(views)}
         </div>
         
         {/* Add Filters and Create Views */}
         <CreateView />
-        
 
         {/* List of Issues */}
-        <List />
+        <List
+          issues={issues}
+          modalOpen={modalOpen}
+          modalClose={modalClose}
+        />
 
         {/* Fixed Add Issue Button */}
         <AddButton />
@@ -38,9 +62,28 @@ export default class Issues extends Component {
 }
 
 Issues.propTypes = {
-  views: React.PropTypes.array
+  views: React.PropTypes.array,
+  issues: React.PropTypes.array,
+  viewsFetch: React.PropTypes.func,
+  issuesFetch: React.PropTypes.func,
+  modalOpen: React.PropTypes.func,
+  modalClose: React.PropTypes.func
 };
 
-Issues.defaultProps = {
-  views: [{name: 'View 1'}, {name: 'View 2'}]
-};
+function mapStateToProps(state) {
+  const { views, issues } = state;
+  return {
+    views,
+    issues,
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  {
+    viewsFetch,
+    issuesFetch,
+    modalOpen,
+    modalClose
+  }
+)(Issues);

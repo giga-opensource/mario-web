@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './App.css';
 import Header from '../components/Header';
+import Modals from './Modals';
 
 export default class App extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ export default class App extends Component {
         <div data-ui-component='Body' className={styles.body}>
           {this.props.children}
         </div>
+        <Modals />
       </div>
     );
   }
