@@ -51,15 +51,3 @@ export default class List extends Component {
 List.propTypes = {
   issues: React.PropTypes.array
 };
-
-List.defaultProps = {
-  issues: [{
-    id: 1023,
-    subject: 'Story Title, flow to the next line',
-    priority: 'High',
-    release: '0.7.3',
-    assign: 'Xiaoguang Chen',
-    news: 'Lyra upload an image.',
-    status: 1
-  }]
-};

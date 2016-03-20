@@ -5,7 +5,6 @@ export default class IssueModal extends Component {
   render() {
     const { closeModal, openIssueId, getOpenIssue } = this.props;
     const issue = getOpenIssue(openIssueId);
-    console.log(issue);
     return (
       <Modal
         isOpen

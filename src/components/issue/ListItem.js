@@ -6,7 +6,7 @@ export default class ListItem extends Component {
   constructor(props) {
     super(props);
     const { handleClick, id } = props;
-    this.handleClick = handleClick.bind(event, id);
+    this.handleClick = handleClick.bind(null, id);
   }
 
   render() {
