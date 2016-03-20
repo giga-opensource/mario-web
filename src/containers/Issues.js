@@ -6,7 +6,9 @@ import AddButton from '../components/issue/AddButton.js';
 import CreateView from '../components/issue/CreateView.js';
 import {
   viewsFetch,
-  issuesFetch
+  issuesFetch,
+  modalOpen,
+  modalClose
 } from '../actions/index';
 
 function renderViews(views) {
@@ -28,11 +30,20 @@ class Issues extends Component {
   }
 
   render() {
-    const { issues, views } = this.props;
+    const {
+      issues,
+      views,
+      modalOpen,
+      modalClose
+    } = this.props;
     return (
       <div>
         {renderViews(views)}
-        <List issues={issues}/>
+        <List
+          issues={issues}
+          modalOpen={modalOpen}
+          modalClose={modalClose}
+        />
         <AddButton />
         <CreateView />
       </div>
@@ -44,7 +55,9 @@ Issues.propTypes = {
   views: React.PropTypes.array,
   issues: React.PropTypes.array,
   viewsFetch: React.PropTypes.func,
-  issuesFetch: React.PropTypes.func
+  issuesFetch: React.PropTypes.func,
+  modalOpen: React.PropTypes.func,
+  modalClose: React.PropTypes.func
 };
 
 function mapStateToProps(state) {
@@ -59,6 +72,8 @@ export default connect(
   mapStateToProps,
   {
     viewsFetch,
-    issuesFetch
+    issuesFetch,
+    modalOpen,
+    modalClose
   }
 )(Issues);
