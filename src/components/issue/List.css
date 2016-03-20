@@ -12,14 +12,11 @@
   display: flex;
   flex-flow: row nowrap;
   width: 100%;
-  background-color: white;
-  padding: 3px;
-  margin-bottom: 1px;
+  padding: 3px 10px;
 }
 
 .tableRowAdditionalInfo {
   composes: tableRow; /* uses .tableRow */
-  margin-top: -1px;
 }
 
 .tableRowItem {
@@ -41,3 +38,8 @@
 .tableRowItemColRelease {
   width: 100px;
 }
+
+.tableRowItemColAssign {
+  width: 150px;
+}
+

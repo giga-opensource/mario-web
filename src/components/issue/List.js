@@ -40,7 +40,7 @@ export default class List extends Component {
           <div className={styles.tableRowItem}>Subject</div>
           <div className={styles.tableRowItemColPriority}>Priority</div>
           <div className={styles.tableRowItemColRelease}>Release</div>
-          <div className={styles.tableRowItem}>Assign</div>
+          <div className={styles.tableRowItemColAssign}>Assign</div>
         </div>
 
         {/* Table Body */}

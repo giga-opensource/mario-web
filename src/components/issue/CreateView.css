@@ -1,0 +1,31 @@
+.container {
+  position: relative;
+  margin: 5px 0 8px;
+  background-color: #333;
+  padding: 5px;
+  color: white;
+}
+
+.sortContainer {
+  padding: 3px;
+}
+
+.filterContainer {
+  padding: 3px;
+}
+
+.createViewButton {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  
+  display: inline-block;
+  background-color: #ddd;
+  padding: 4px 8px;
+  color: #555;
+}
+
+.createViewButton:hover {
+  background-color: white;
+  cursor: pointer;
+}

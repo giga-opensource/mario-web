@@ -5,7 +5,9 @@ export default class View extends Component {
   render() {
     const { name } = this.props;
     return (
-      <div>{name}</div>
+      <div data-ui-component='View' className={styles.viewTabButton}>
+        {name}
+      </div>
     );
   }
 }

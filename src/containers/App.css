@@ -4,6 +4,10 @@
  * Please refer to https://github.com/css-modules/css-modules for more information
  */
 
+:global(*) {
+  box-sizing: border-box;
+}
+
 :global(html) {
   height: 100%;
 }

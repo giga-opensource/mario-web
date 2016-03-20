@@ -8,6 +8,16 @@
   margin-top: -1px;
 }
 
+.tableRowWrapper {
+  background-color: #DDD;
+  margin-bottom: 1px;
+}
+
+.tableRowWrapper:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
 .tableRowItem {
   composes: tableRowItem from "./List.css";
 }
@@ -28,4 +38,8 @@
 
 .tableRowItemColRelease {
   composes: tableRowItemColRelease from "./List.css";
+}
+
+.tableRowItemColAssign {
+  composes: tableRowItemColAssign from "./List.css";
 }

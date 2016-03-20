@@ -6,7 +6,7 @@ export default class ListItem extends Component {
   constructor(props) {
     super(props);
     const { handleClick, id } = props;
-    this.handleClick = handleClick.bind(event, id);
+    this.handleClick = handleClick.bind(null, id);
   }
 
   render() {
@@ -20,13 +20,13 @@ export default class ListItem extends Component {
       status
     } = this.props;
     return (
-      <div data-ui-component='ListItem' onClick={this.handleClick}>
+      <div data-ui-component='ListItem' onClick={this.handleClick} className={styles.tableRowWrapper}>
         <div className={styles.tableRow}>
           <div className={styles.tableRowItemColID}>{id}</div>
           <div className={styles.tableRowItem}>{subject}</div>
           <div className={styles.tableRowItemColPriority}>{priority}</div>
           <div className={styles.tableRowItemColRelease}>{release}</div>
-          <div className={styles.tableRowItem}>{assign}</div>
+          <div className={styles.tableRowItemColAssign}>{assign}</div>
         </div>
         <div className={styles.tableRowAdditionalInfo}>
           <div className={styles.tableRowItemColID}></div>

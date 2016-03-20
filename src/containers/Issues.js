@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import View from '../components/issue/View.js';
 import List from '../components/issue/List.js';
 import AddButton from '../components/issue/AddButton.js';
+import CreateView from '../components/issue/CreateView.js';
 
 export default class Issues extends Component {
   constructor(props) {
@@ -16,8 +17,20 @@ export default class Issues extends Component {
   render() {
     return (
       <div data-ui-component='Issues'>
-        {this.renderFilters()}
+        
+        {/* Filter View Tabs */}
+        <div data-ui-component='View__tabs'>
+          {this.renderFilters()}
+        </div>
+        
+        {/* Add Filters and Create Views */}
+        <CreateView />
+        
+
+        {/* List of Issues */}
         <List />
+
+        {/* Fixed Add Issue Button */}
         <AddButton />
       </div>
     );
