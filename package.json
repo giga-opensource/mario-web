@@ -20,7 +20,8 @@
     "react-toolbox": "^0.14.2",
     "redux": "^3.0.4",
     "redux-logger": "^2.0.4",
-    "redux-thunk": "^1.0.0"
+    "redux-thunk": "^1.0.0",
+    "socket.io": "^1.4.5"
   },
   "devDependencies": {
     "babel-core": "^6.7.2",
